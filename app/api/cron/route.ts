@@ -61,9 +61,9 @@ export async function GET() {
             message: "Ok", data: updatedProducts
         });
     } catch (error: any) {
-        return {
+        return NextResponse.json({
             status: 500,
-            body: { error: `Error in GET: ${error.message}` },
-        };
+            body: { error: `Error in GET: ${error.message}` }
+        });
     }
 }
